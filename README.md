@@ -3,7 +3,7 @@ Official repository of the Visnjan Observatory e-Callisto station
 
 Members of the Visnjan Callisto group: Marko Radolović, Matej Marković, Danko Marušić, Korado Korlević
 
-e-callisto.org
+[e-callisto.org](https://e-callisto.org/)
 
 The CALLISTO spectrometer is a programmable heterodyne receiver designed 2006 in the framework of IHY2007 and ISWI by Christian Monstein (PI) as member of the former Radio Astronomy Group (RAG) at ETH Zurich, Switzerland. CALLISTO is an artificial word, composed as 'Compound Astronomical Low frequency Low cost Instrument for Spectroscopy and Transportable Observatory'. The main applications are observation of solar radio bursts for astronomical science, education, outreach and citizen science as well as rfi-monitoring. The instrument natively operates between 45 and 870 MHz using a modern, commercially available broadband cable-TV tuner CD1316 having a frequency resolution of 62.5 KHz. 
 
