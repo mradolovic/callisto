@@ -1,0 +1,9 @@
+Added Pin To Net: NetName=GND Pin=LPF1-2
+Added Pin To Net: NetName=GND Pin=LPF1-3
+Added Pin To Net: NetName=GND Pin=LPF1-4
+Added Pin To Net: NetName=GND Pin=LPF1-6
+Added Pin To Net: NetName=GND Pin=LPF1-7
+Added Pin To Net: NetName=GND Pin=LPF1-8
+Added Net: Name=GND
+Added Pin To Net: NetName=OUT/IN Pin=LPF1-5
+Added Net: Name=OUT/IN

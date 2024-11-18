@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [SXLP-450+.PrjPcb]
+   Generated File[SXLP-450+.TXT]
+   Generated File[SXLP-450+.LDP]
+   Generated File[SXLP-450+.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 17:24:20 On 18.11.2024.
