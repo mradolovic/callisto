@@ -1,7 +1,11 @@
 # callisto
 Official repository of the Visnjan Observatory e-Callisto station
 
-Members of the Visnjan Callisto group: Marko Radolović, Matej Marković, Danko Marušić, Korado Korlević
+Members of the Visnjan Callisto group:<br>
+Marko Radolović<br>
+Matej Marković<br>
+Danko Marušić<br>
+Korado Korlević<br>
 
 [e-callisto.org](https://e-callisto.org/)
 
