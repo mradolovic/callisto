@@ -1,0 +1,15 @@
+Added Component: Designator=IC?(TS7B_M)
+Added Pin To Net: NetName=SW_NODE Pin=IC?-1
+Added Pin To Net: NetName=+24VIN Pin=IC?-2
+Added Pin To Net: NetName=BOOST Pin=IC?-3
+Added Pin To Net: NetName=GND Pin=IC?-4
+Added Pin To Net: NetName=CURRENT_ADJ Pin=IC?-5
+Added Pin To Net: NetName=FEEDBACK Pin=IC?-6
+Added Pin To Net: NetName=SOFTSTART Pin=IC?-7
+Added Pin To Net: NetName=GND Pin=IC?-8
+Added Member To Class: ClassName=12V SMPS Member=Component C? 100uF
+Added Member To Class: ClassName=12V SMPS Member=Component C? C0805C471J5GAC
+Added Member To Class: ClassName=12V SMPS Member=Component C? 100uF
+Added Member To Class: ClassName=12V SMPS Member=Component D? Schottky Diode
+Added Member To Class: ClassName=12V SMPS Member=Component IC? LM2679SX-12
+Added Member To Class: ClassName=12V SMPS Member=Component R? CRCW08055K60FKEA
