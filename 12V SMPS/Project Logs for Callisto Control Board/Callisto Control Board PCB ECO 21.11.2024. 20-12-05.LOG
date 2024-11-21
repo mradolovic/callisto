@@ -1,0 +1,36 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=C? NewDesignator=C3
+Change Component Designator: OldDesignator=C? NewDesignator=C4
+Change Component Designator: OldDesignator=D? NewDesignator=D1
+Change Component Designator: OldDesignator=D? NewDesignator=D2
+Change Component Designator: OldDesignator=IC? NewDesignator=IC1
+Change Component Designator: OldDesignator=IC? NewDesignator=IC2
+Change Component Designator: OldDesignator=L? NewDesignator=L1
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Added Component: Designator=IC3(TS7B_M)
+Added Component: Designator=IC?(INA219AIDR)
+Added Pin To Net: NetName=NetC?_2 Pin=IC1-1
+Added Pin To Net: NetName=FEEDBACK Pin=IC1-3
+Added Pin To Net: NetName=SW_NODE Pin=IC3-1
+Added Pin To Net: NetName=BOOST Pin=IC3-3
+Added Pin To Net: NetName=NetC?_2 Pin=IC3-4
+Added Pin To Net: NetName=CURRENT_ADJ Pin=IC3-5
+Added Pin To Net: NetName=FEEDBACK Pin=IC3-6
+Added Pin To Net: NetName=SOFTSTART Pin=IC3-7
+Added Pin To Net: NetName=NetC?_2 Pin=IC3-8
+Change Net Name : Old Net Name=NetC?_2 New Net Name=GND
+Change Net Name : Old Net Name=NetD?_2 New Net Name=NetD1_2
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=IC3-2
+Added Net: Name=NetC2_1
+Added Member To Class: ClassName=DC/DC Converter Member=Component C2 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component C3 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component C4 C0805C471J5GAC
+Added Member To Class: ClassName=DC/DC Converter Member=Component D2 Schottky Diode
+Added Member To Class: ClassName=Sensor Board Member=Component IC1 LD1117S33CTR
+Added Member To Class: ClassName=Sensor Board Member=Component IC2 INA219AIDR
+Added Member To Class: ClassName=DC/DC Converter Member=Component IC3 LM2679SX-12
+Added Member To Class: ClassName=Sensor Board Member=Component IC? INA219AIDR
+Added Member To Class: ClassName=DC/DC Converter Member=Component R1 CRCW08055K60FKEA

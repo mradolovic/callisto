@@ -1,0 +1,7 @@
+Added Component: Designator=IC?(LD1117)
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? C0805C471J5GAC
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component D? Schottky Diode
+Added Member To Class: ClassName=Sensor Board Member=Component IC? INA219AIDR
+Added Member To Class: ClassName=DC/DC Converter Member=Component R? CRCW08055K60FKEA

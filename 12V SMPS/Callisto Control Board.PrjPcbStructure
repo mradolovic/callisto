@@ -1,1 +1,3 @@
-Record=TopLevelDocument|FileName=12V SMPS.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=Callisto Control Board.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Callisto Control Board.SchDoc|Designator=DC/DC Converter|SchDesignator=DC/DC Converter|FileName=12V SMPS.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=12V SMPS.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Callisto Control Board.SchDoc|Designator=Sensor Board|SchDesignator=Sensor Board|FileName=Pi Sensor Board.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Pi Sensor Board.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

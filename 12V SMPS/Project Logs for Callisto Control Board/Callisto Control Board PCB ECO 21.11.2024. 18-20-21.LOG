@@ -1,0 +1,7 @@
+Change Class Name : Old Net Name=Designator New Net Name=DC/DC Converter
+Added Class: Name=Sensor Board
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? C0805C471J5GAC
+Added Member To Class: ClassName=DC/DC Converter Member=Component C? 100uF
+Added Member To Class: ClassName=DC/DC Converter Member=Component D? Schottky Diode
+Added Member To Class: ClassName=DC/DC Converter Member=Component R? CRCW08055K60FKEA
