@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=SCL Pin=R34-2
+Removed Pin From Net: NetName=SCL Pin=U1-3
+Added Pin To Net: NetName=SDA Pin=R34-2
+Added Pin To Net: NetName=SDA Pin=U1-3
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219

@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=SDA Pin=R33-2
+Added Pin To Net: NetName=SCL Pin=R34-2
+Added Pin To Net: NetName=SCL Pin=U1-3
+Added Pin To Net: NetName=SDA Pin=U1-4
+Change Net Name : Old Net Name=SDA New Net Name=SCL
