@@ -1,0 +1,31 @@
+Add Net: Net with name "+3V3_LDO" already exists
+Add Net: Net with name "GND" already exists
+Added Pin To Net: NetName=M1A_CH1 Pin=DRIVER2-4
+Added Pin To Net: NetName=M1A_CH1 Pin=J9-4
+Added Net: Name=M1A_CH1
+Added Pin To Net: NetName=M1A_CH2 Pin=DRIVER1-4
+Added Pin To Net: NetName=M1A_CH2 Pin=J14-4
+Added Net: Name=M1A_CH2
+Added Pin To Net: NetName=M1B_CH1 Pin=DRIVER2-3
+Added Pin To Net: NetName=M1B_CH1 Pin=J9-3
+Added Net: Name=M1B_CH1
+Added Pin To Net: NetName=M1B_CH2 Pin=DRIVER1-3
+Added Pin To Net: NetName=M1B_CH2 Pin=J14-3
+Added Net: Name=M1B_CH2
+Added Pin To Net: NetName=M2A_CH1 Pin=DRIVER2-5
+Added Pin To Net: NetName=M2A_CH1 Pin=J9-5
+Added Net: Name=M2A_CH1
+Added Pin To Net: NetName=M2A_CH2 Pin=DRIVER1-5
+Added Pin To Net: NetName=M2A_CH2 Pin=J14-5
+Added Net: Name=M2A_CH2
+Added Pin To Net: NetName=M2B_CH1 Pin=DRIVER2-6
+Added Pin To Net: NetName=M2B_CH1 Pin=J9-6
+Added Net: Name=M2B_CH1
+Added Pin To Net: NetName=M2B_CH2 Pin=DRIVER1-6
+Added Pin To Net: NetName=M2B_CH2 Pin=J14-6
+Added Net: Name=M2B_CH2
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219

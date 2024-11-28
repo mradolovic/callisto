@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=M2B_CH1 Pin=J9-1
+Removed Pin From Net: NetName=M2A_CH1 Pin=J9-2
+Removed Pin From Net: NetName=M1A_CH1 Pin=J9-3
+Removed Pin From Net: NetName=M1B_CH1 Pin=J9-4
+Removed Pin From Net: NetName=GND Pin=J9-5
+Added Pin To Net: NetName=M2A_CH1 Pin=J9-1
+Added Pin To Net: NetName=M1A_CH1 Pin=J9-2
+Added Pin To Net: NetName=M1B_CH1 Pin=J9-3
+Added Pin To Net: NetName=GND Pin=J9-4
+Added Pin To Net: NetName=M2B_CH1 Pin=J9-5
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219

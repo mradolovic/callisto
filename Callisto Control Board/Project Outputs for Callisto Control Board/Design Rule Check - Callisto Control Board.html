@@ -1,0 +1,407 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">28.11.2024.</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13:15:40</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc" class="file"><acronym title="C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc">C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">25</td></tr>
+</table>
+</td>
+</table><a name="ID4CURCCR14OMTL5RJFVV03L45CCEXUIW4QQB4V5NZ2AYPUPA1NZBL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHPWZUSDU5ANCJIJKO1CVPGF0UKFNLGIO0ZCRFOH4QIPJXOCRRXJ">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDT5DBU3AJHGFRE4CINZGZXYO2MEUAODBIVQKAHLFIS5Q4N24BWYB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIAHER5B4ALWTFVRUC21GULXVWBK0PKPKQLEQOQOCSTXP3MQAUIJE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">19</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDR2CXCGDFOFR3CL2VFULFBRNP5BXEH1GYHHAKX1GQBUYAY1MTKBEP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDESYDYPGN4IQDIS33FPWQKUL3PGGVIVCEXYBRF0DURSFZ214TFMSO">Width Constraint (Min=0.254mm) (Max=2mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUPYVYEPDNKGEPA1XO5SBRMNJVGMXASG0X545RCMRKCANJ2ADAE5H">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1P3OJRQWFQY3KBPMGQPR3HYFXPHUCPTM2M2DZRC4E1PUSUCUOP3I">Hole Size Constraint (Min=0.15mm) (Max=4mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCNSLP2MNUUHRGL203IYBBWTBZJW5UCG01UM51WFHTKWTJKHG4XHI">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHYFWTERSMYX0KGMKMIDA41A15KVDE4L01ZMFCUDTTWBV0OFZGMRB">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPQHGLB5CBV3WGTSWSMYH5RFKCKXWG4GR2OE0HUK1RKRY0ZOKKJGJ">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSD5I0YKPBPZJJPWMX0FXAGQW2CVSSEM5MBIFVOIUGRKY42F5UBHK">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFJWUGZQKGO3XDASLXMUAR0YFCKI2VFYX3VGI3ZBTF2RHO3DGICAK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYEBOFNHEGOVBGBQSBWROI2050MXXLJLZIBUHVVCJCIIYIFFO5WLK">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">25</td>
+</tr>
+</table><br><a name="IDIAHER5B4ALWTFVRUC21GULXVWBK0PKPKQLEQOQOCSTXP3MQAUIJE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1807.012mil|Location2.X=2331.68mil|Location1.Y=4405.445mil|Location2.Y=4672.24mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1807.012mil|Location2.X=2331.68mil|Location1.Y=4405.445mil|Location2.Y=4672.24mil|Absolute=True">Un-Routed Net Constraint: Net SW_NODE Between Pad D2-3(27.9mm,94.425mm) on Top Layer And Pad C1-1(38.75mm,98mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2294.279mil|Location2.X=2661.467mil|Location1.Y=4307.02mil|Location2.Y=4672.24mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2294.279mil|Location2.X=2661.467mil|Location1.Y=4307.02mil|Location2.Y=4672.24mil|Absolute=True">Un-Routed Net Constraint: Net SW_NODE Between Pad C1-1(38.75mm,98mm) on Top Layer And Pad L1-1(45.25mm,92mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2353.334mil|Location2.X=3339.812mil|Location1.Y=4058.989mil|Location2.Y=4672.24mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2353.334mil|Location2.X=3339.812mil|Location1.Y=4058.989mil|Location2.Y=4672.24mil|Absolute=True">Un-Routed Net Constraint: Net BOOST Between Pad C1-2(40.25mm,98mm) on Top Layer And Pad IC2-3(64.23mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1009.77mil|Location2.X=3289.812mil|Location1.Y=4058.989mil|Location2.Y=4315.02mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1009.77mil|Location2.X=3289.812mil|Location1.Y=4058.989mil|Location2.Y=4315.02mil|Absolute=True">Un-Routed Net Constraint: Net NetC2_1 Between Pad C2-1(7mm,87.5mm) on Top Layer And Pad IC2-2(62.96mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1009.77mil|Location2.X=1588.635mil|Location1.Y=4464.501mil|Location2.Y=4629.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1009.77mil|Location2.X=1588.635mil|Location1.Y=4464.501mil|Location2.Y=4629.981mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C2-2(7mm,95.5mm) on Top Layer And Pad C3-2(19mm,95.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=739.164mil|Location2.X=1116.195mil|Location1.Y=4464.501mil|Location2.Y=4672.24mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=739.164mil|Location2.X=1116.195mil|Location1.Y=4464.501mil|Location2.Y=4672.24mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C4-2(-0.75mm,98mm) on Top Layer And Pad C2-2(7mm,95.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1482.21mil|Location2.X=2212.649mil|Location1.Y=4149.54mil|Location2.Y=4675.256mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1482.21mil|Location2.X=2212.649mil|Location1.Y=4149.54mil|Location2.Y=4675.256mil|Absolute=True">Un-Routed Net Constraint: Net FEEDBACK Between Pad C3-1(19mm,87.5mm) on Top Layer And Pad D1-2(35.55mm,98mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1482.21mil|Location2.X=1878.004mil|Location1.Y=4464.501mil|Location2.Y=4694.941mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1482.21mil|Location2.X=1878.004mil|Location1.Y=4464.501mil|Location2.Y=4694.941mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C3-2(19mm,95.5mm) on Top Layer And Pad D2-1(26.8mm,98.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=680.109mil|Location2.X=3539.812mil|Location1.Y=4058.989mil|Location2.Y=4672.24mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=680.109mil|Location2.X=3539.812mil|Location1.Y=4058.989mil|Location2.Y=4672.24mil|Absolute=True">Un-Routed Net Constraint: Net SOFTSTART Between Pad C4-1(-2.25mm,98mm) on Top Layer And Pad IC2-7(69.31mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=466.365mil|Location2.X=776.566mil|Location1.Y=4615.976mil|Location2.Y=4675.355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=466.365mil|Location2.X=776.566mil|Location1.Y=4615.976mil|Location2.Y=4675.355mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad R1-1(-7.551mm,98mm) on Top Layer And Pad C4-2(-0.75mm,98mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=338.574mil|Location2.X=2129.972mil|Location1.Y=4616.075mil|Location2.Y=4688.972mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=338.574mil|Location2.X=2129.972mil|Location1.Y=4616.075mil|Location2.Y=4688.972mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_1 Between Pad R2-2(-10.95mm,98.5mm) on Top Layer And Pad D1-1(33.45mm,98mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2161.342mil|Location2.X=3074.853mil|Location1.Y=4307.02mil|Location2.Y=4675.256mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2161.342mil|Location2.X=3074.853mil|Location1.Y=4307.02mil|Location2.Y=4675.256mil|Absolute=True">Un-Routed Net Constraint: Net FEEDBACK Between Pad D1-2(35.55mm,98mm) on Top Layer And Pad L1-2(55.75mm,92mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1807.012mil|Location2.X=1964.618mil|Location1.Y=4635.76mil|Location2.Y=4694.941mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1807.012mil|Location2.X=1964.618mil|Location1.Y=4635.76mil|Location2.Y=4694.941mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad D2-1(26.8mm,98.5mm) on Top Layer And Pad D2-2(29mm,98.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1893.626mil|Location2.X=3577.804mil|Location1.Y=4334.579mil|Location2.Y=4694.941mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1893.626mil|Location2.X=3577.804mil|Location1.Y=4334.579mil|Location2.Y=4694.941mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad D2-2(29mm,98.5mm) on Top Layer And Pad IC2-8(65.5mm,94.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2476.302mil|Location2.X=3239.812mil|Location1.Y=4058.989mil|Location2.Y=4511.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2476.302mil|Location2.X=3239.812mil|Location1.Y=4058.989mil|Location2.Y=4511.871mil|Absolute=True">Un-Routed Net Constraint: Net SW_NODE Between Pad L1-1(45.25mm,92mm) on Top Layer And Pad IC2-1(61.69mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3154.45mil|Location2.X=3577.804mil|Location1.Y=4058.989mil|Location2.Y=4681.162mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3154.45mil|Location2.X=3577.804mil|Location1.Y=4058.989mil|Location2.Y=4681.162mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad IC2-4(65.5mm,84.95mm) on Top Layer And Pad IC2-8(65.5mm,94.5mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=549.109mil|Location2.X=3439.812mil|Location1.Y=4058.989mil|Location2.Y=4675.355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=549.109mil|Location2.X=3439.812mil|Location1.Y=4058.989mil|Location2.Y=4675.355mil|Absolute=True">Un-Routed Net Constraint: Net CURRENT_ADJ Between Pad R1-2(-5.449mm,98mm) on Top Layer And Pad IC2-5(66.77mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2889.687mil|Location2.X=3489.812mil|Location1.Y=4058.989mil|Location2.Y=4511.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2889.687mil|Location2.X=3489.812mil|Location1.Y=4058.989mil|Location2.Y=4511.871mil|Absolute=True">Un-Routed Net Constraint: Net FEEDBACK Between Pad L1-2(55.75mm,92mm) on Top Layer And Pad IC2-6(68.04mm,84.95mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=255.897mil|Location2.X=513.865mil|Location1.Y=4615.976mil|Location2.Y=4688.972mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=255.897mil|Location2.X=513.865mil|Location1.Y=4615.976mil|Location2.Y=4688.972mil|Absolute=True">Un-Routed Net Constraint: Net 12V_SW_GND Between Pad R2-1(-13.05mm,98.5mm) on Top Layer And Pad R1-1(-7.551mm,98mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHYFWTERSMYX0KGMKMIDA41A15KVDE4L01ZMFCUDTTWBV0OFZGMRB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3235.502mil|Location2.X=3246.752mil|Location1.Y=4053.364mil|Location2.Y=4064.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3235.502mil|Location2.X=3246.752mil|Location1.Y=4053.364mil|Location2.Y=4064.614mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-1(61.69mm,84.95mm) on Top Layer And Pad IC2-2(62.96mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3285.502mil|Location2.X=3296.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3285.502mil|Location2.X=3296.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-2(62.96mm,84.95mm) on Top Layer And Pad IC2-3(64.23mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.502mil|Location2.X=3346.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.502mil|Location2.X=3346.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-3(64.23mm,84.95mm) on Top Layer And Pad IC2-4(65.5mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3385.502mil|Location2.X=3396.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3385.502mil|Location2.X=3396.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-4(65.5mm,84.95mm) on Top Layer And Pad IC2-5(66.77mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3435.502mil|Location2.X=3446.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3435.502mil|Location2.X=3446.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-5(66.77mm,84.95mm) on Top Layer And Pad IC2-6(68.04mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3485.502mil|Location2.X=3496.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3485.502mil|Location2.X=3496.752mil|Location1.Y=4199.159mil|Location2.Y=4210.409mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.067mm &lt; 0.254mm) Between Pad IC2-6(68.04mm,84.95mm) on Top Layer And Pad IC2-7(69.31mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,25 @@
+Added Component: Designator=J11(3 pin header)
+Added Component: Designator=J13(3 pin header)
+Add Pin To Net: Unknown Pin: Pin DRIVER1-3
+Add Pin To Net: Unknown Pin: Pin DRIVER1-4
+Add Pin To Net: Unknown Pin: Pin DRIVER1-5
+Add Pin To Net: Unknown Pin: Pin DRIVER1-6
+Add Pin To Net: Unknown Pin: Pin DRIVER1-8
+Add Pin To Net: Unknown Pin: Pin DRIVER1-9
+Add Pin To Net: Unknown Pin: Pin DRIVER1-10
+Add Pin To Net: Unknown Pin: Pin DRIVER1-11
+Add Pin To Net: Unknown Pin: Pin DRIVER1-13
+Add Pin To Net: Unknown Pin: Pin DRIVER1-15
+Add Pin To Net: Unknown Pin: Pin DRIVER1-16
+Added Pin To Net: NetName=NetDRIVER1_11 Pin=J11-2
+Added Pin To Net: NetName=NetDRIVER1_10 Pin=J13-2
+Add Net: Net with name "+3V3_LDO" already exists
+Add Net: Net with name "GND" already exists
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class Member: Failed to add class member : Component DRIVER1 TMC2209
+Added Member To Class: ClassName=TMC2209 Member=Component J11 3 pin
+Added Member To Class: ClassName=TMC2209 Member=Component J13 3 pin

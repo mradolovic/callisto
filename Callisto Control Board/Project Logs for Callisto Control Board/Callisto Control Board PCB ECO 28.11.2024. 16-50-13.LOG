@@ -1,0 +1,36 @@
+Added Component: Designator=J9(TB003-500-P02BE)
+Add component (AddParameter): Name = "Value"; Value = "2 pin"; VariantName = "[No Variations]"
+Added Component: Designator=J10(TB003-500-P02BE)
+Add component (AddParameter): Name = "Value"; Value = "2 pin"; VariantName = "[No Variations]"
+Added Component: Designator=J12(TB003-500-P02BE)
+Add component (AddParameter): Name = "Value"; Value = "2 pin"; VariantName = "[No Variations]"
+Add Net: Net with name "+3V3_LDO" already exists
+Added Pin To Net: NetName=+3V3_RPI Pin=J1-1
+Added Net: Name=+3V3_RPI
+Added Pin To Net: NetName=+12V_SW Pin=J9-2
+Added Net: Name=+12V_SW
+Add Net: Net with name "GND" already exists
+Added Pin To Net: NetName=NetDRIVER1_3 Pin=J10-2
+Added Net: Name=NetDRIVER1_3
+Added Pin To Net: NetName=NetDRIVER1_4 Pin=J10-1
+Added Net: Name=NetDRIVER1_4
+Added Pin To Net: NetName=NetDRIVER1_5 Pin=J12-2
+Added Net: Name=NetDRIVER1_5
+Added Pin To Net: NetName=NetDRIVER1_6 Pin=J12-1
+Added Net: Name=NetDRIVER1_6
+Added Net: Name=NetDRIVER1_9
+Added Net: Name=NetDRIVER1_10
+Added Net: Name=NetDRIVER1_11
+Added Net: Name=NetDRIVER1_13
+Added Net: Name=NetDRIVER1_15
+Added Net: Name=NetDRIVER1_16
+Added Pin To Net: NetName=UART_RX Pin=J1-10
+Added Net: Name=UART_RX
+Added Pin To Net: NetName=UART_TX Pin=J1-8
+Added Net: Name=UART_TX
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Added Class: Name=TMC2209
