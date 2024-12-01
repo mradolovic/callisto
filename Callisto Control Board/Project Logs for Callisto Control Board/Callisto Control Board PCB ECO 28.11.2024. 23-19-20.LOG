@@ -1,0 +1,11 @@
+Added Pin To Net: NetName=GPIO_3 Pin=DRIVER1-9
+Added Pin To Net: NetName=GPIO_2 Pin=DRIVER1-15
+Added Pin To Net: NetName=GPIO_0 Pin=DRIVER1-16
+Added Pin To Net: NetName=GPIO_23 Pin=DRIVER2-9
+Added Pin To Net: NetName=GPIO_22 Pin=DRIVER2-15
+Added Pin To Net: NetName=GPIO_21 Pin=DRIVER2-16
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219

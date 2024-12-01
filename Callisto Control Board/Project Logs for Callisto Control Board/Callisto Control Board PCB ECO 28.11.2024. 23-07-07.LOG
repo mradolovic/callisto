@@ -1,0 +1,7 @@
+Change Net Name : Old Net Name=FEEDBACK New Net Name=+12V_SW
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Added Member To Class: ClassName=INA219 Member=Component IC8 INA219AIDR

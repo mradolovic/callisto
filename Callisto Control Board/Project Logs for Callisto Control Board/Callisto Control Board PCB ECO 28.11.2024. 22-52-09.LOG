@@ -1,0 +1,40 @@
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=FEEDBACK Pin=C7-1
+Added Pin To Net: NetName=GND Pin=D2-1
+Added Pin To Net: NetName=GND Pin=D2-2
+Added Pin To Net: NetName=FEEDBACK Pin=DRIVER1-8
+Added Pin To Net: NetName=FEEDBACK Pin=DRIVER2-8
+Added Pin To Net: NetName=GND Pin=IC2-4
+Added Pin To Net: NetName=GND Pin=IC2-8
+Added Pin To Net: NetName=FEEDBACK Pin=IC3-3
+Added Pin To Net: NetName=FEEDBACK Pin=J3-2
+Added Pin To Net: NetName=FEEDBACK Pin=J9-1
+Added Pin To Net: NetName=FEEDBACK Pin=J14-1
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R2-1
+Change Net Name : Old Net Name=GND New Net Name=12V_SW_GND
+Added Pin To Net: NetName=GPIO_0 Pin=DRIVER2-16
+Added Pin To Net: NetName=GPIO_0 Pin=J1-11
+Added Net: Name=GPIO_0
+Added Pin To Net: NetName=GPIO_2 Pin=DRIVER2-15
+Added Pin To Net: NetName=GPIO_2 Pin=J1-13
+Added Net: Name=GPIO_2
+Added Pin To Net: NetName=GPIO_3 Pin=DRIVER2-9
+Added Pin To Net: NetName=GPIO_3 Pin=J1-15
+Added Net: Name=GPIO_3
+Added Pin To Net: NetName=GPIO_21 Pin=DRIVER1-16
+Added Pin To Net: NetName=GPIO_21 Pin=J1-29
+Added Net: Name=GPIO_21
+Added Pin To Net: NetName=GPIO_22 Pin=DRIVER1-15
+Added Pin To Net: NetName=GPIO_22 Pin=J1-31
+Added Net: Name=GPIO_22
+Added Pin To Net: NetName=GPIO_23 Pin=DRIVER1-9
+Added Pin To Net: NetName=GPIO_23 Pin=J1-33
+Added Net: Name=GPIO_23
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
