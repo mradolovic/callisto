@@ -101,23 +101,6 @@ GenerateClassCluster=0
 DocumentUniqueId=WBUAFYHP
 
 [Document4]
-DocumentPath=12V SMPS.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=2
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=ACFOKUGN
-
-[Document5]
 DocumentPath=3V3 LDO.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,7 +117,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UBPSTUAD
 
-[Document6]
+[Document5]
 DocumentPath=INA219_CH1.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -151,7 +134,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZJYPIQID
 
-[Document7]
+[Document6]
 DocumentPath=Callisto Control Board.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -168,7 +151,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=WBXEDRSB
 
-[Document8]
+[Document7]
 DocumentPath=Callisto Control Board.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -185,7 +168,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document9]
+[Document8]
 DocumentPath=INA219_CH2.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -202,7 +185,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=APTNNQSC
 
-[Document10]
+[Document9]
 DocumentPath=INA219_CH3.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -219,7 +202,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TIQYCNBN
 
-[Document11]
+[Document10]
 DocumentPath=INA219_CH4.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -236,7 +219,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NRLHDWBK
 
-[Document12]
+[Document11]
 DocumentPath=INA219_CH5.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -253,7 +236,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CNNGUXUN
 
-[Document13]
+[Document12]
 DocumentPath=INA219_CH6.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -270,7 +253,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FHFYHBQR
 
-[Document14]
+[Document13]
 DocumentPath=Raspberry Pi.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -287,7 +270,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BUETKOZL
 
-[Document15]
+[Document14]
 DocumentPath=BME280.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -304,14 +287,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GRKIQZOJ
 
-[Document16]
+[Document15]
 DocumentPath=Driver Board.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=11
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -321,14 +304,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NEGZAARF
 
-[Document17]
+[Document16]
 DocumentPath=5V_SMPS.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=12
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1

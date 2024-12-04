@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=GPIO_0 Pin=R38-2
+Removed Pin From Net: NetName=GPIO_2 Pin=R39-2
+Removed Pin From Net: NetName=GPIO_3 Pin=R40-2
+Removed Pin From Net: NetName=GPIO_21 Pin=R41-2
+Removed Pin From Net: NetName=GPIO_22 Pin=R42-2
+Removed Pin From Net: NetName=GPIO_23 Pin=R43-2
+Removed Member From Class: ClassName=TMC2209 Member=R38
+Removed Member From Class: ClassName=TMC2209 Member=R39
+Removed Member From Class: ClassName=TMC2209 Member=R40
+Removed Member From Class: ClassName=TMC2209 Member=R41
+Removed Member From Class: ClassName=TMC2209 Member=R42
+Removed Member From Class: ClassName=TMC2209 Member=R43
+Added Pin To Net: NetName=GPIO_3 Pin=DRIVER1-9
+Added Pin To Net: NetName=GPIO_2 Pin=DRIVER1-15
+Added Pin To Net: NetName=GPIO_0 Pin=DRIVER1-16
+Added Pin To Net: NetName=GPIO_23 Pin=DRIVER2-9
+Added Pin To Net: NetName=GPIO_22 Pin=DRIVER2-15
+Added Pin To Net: NetName=GPIO_21 Pin=DRIVER2-16
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Added Member To Class: ClassName=Callisto Control Board Member=Component R37 1k
