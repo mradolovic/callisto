@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Callisto Control Board.PrjPcb]
+   Generated File[Callisto Control Board.TXT]
+   Generated File[Callisto Control Board.DRL]
+   Generated File[Callisto Control Board.LDP]
+   Generated File[Callisto Control Board.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:42:43 On 11.12.2024.

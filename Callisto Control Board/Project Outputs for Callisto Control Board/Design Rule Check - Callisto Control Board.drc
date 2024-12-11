@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\mrado\Documents\e-callisto\Electronics - hardware\Altium - e-Callisto\Callisto Control Board\Callisto Control Board.PcbDoc
-Date     : 28.11.2024.
-Time     : 13:15:40
+Date     : 4.12.2024.
+Time     : 18:20:20
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
 Rule Violations :0
@@ -10,31 +10,12 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net SW_NODE Between Pad D2-3(27.9mm,94.425mm) on Top Layer And Pad C1-1(38.75mm,98mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net SW_NODE Between Pad C1-1(38.75mm,98mm) on Top Layer And Pad L1-1(45.25mm,92mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net BOOST Between Pad C1-2(40.25mm,98mm) on Top Layer And Pad IC2-3(64.23mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetC2_1 Between Pad C2-1(7mm,87.5mm) on Top Layer And Pad IC2-2(62.96mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C2-2(7mm,95.5mm) on Top Layer And Pad C3-2(19mm,95.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C4-2(-0.75mm,98mm) on Top Layer And Pad C2-2(7mm,95.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net FEEDBACK Between Pad C3-1(19mm,87.5mm) on Top Layer And Pad D1-2(35.55mm,98mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad C3-2(19mm,95.5mm) on Top Layer And Pad D2-1(26.8mm,98.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net SOFTSTART Between Pad C4-1(-2.25mm,98mm) on Top Layer And Pad IC2-7(69.31mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad R1-1(-7.551mm,98mm) on Top Layer And Pad C4-2(-0.75mm,98mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net NetD1_1 Between Pad R2-2(-10.95mm,98.5mm) on Top Layer And Pad D1-1(33.45mm,98mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net FEEDBACK Between Pad D1-2(35.55mm,98mm) on Top Layer And Pad L1-2(55.75mm,92mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad D2-1(26.8mm,98.5mm) on Top Layer And Pad D2-2(29mm,98.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad D2-2(29mm,98.5mm) on Top Layer And Pad IC2-8(65.5mm,94.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net SW_NODE Between Pad L1-1(45.25mm,92mm) on Top Layer And Pad IC2-1(61.69mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad IC2-4(65.5mm,84.95mm) on Top Layer And Pad IC2-8(65.5mm,94.5mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net CURRENT_ADJ Between Pad R1-2(-5.449mm,98mm) on Top Layer And Pad IC2-5(66.77mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net FEEDBACK Between Pad L1-2(55.75mm,92mm) on Top Layer And Pad IC2-6(68.04mm,84.95mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Net 12V_SW_GND Between Pad R2-1(-13.05mm,98.5mm) on Top Layer And Pad R1-1(-7.551mm,98mm) on Top Layer 
-Rule Violations :19
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.254mm) (Max=2mm) (Preferred=0.254mm) (All)
+Processing Rule : Width Constraint (Min=0.254mm) (Max=2mm) (Preferred=0.6mm) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
@@ -47,13 +28,7 @@ Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-1(61.69mm,84.95mm) on Top Layer And Pad IC2-2(62.96mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-2(62.96mm,84.95mm) on Top Layer And Pad IC2-3(64.23mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-3(64.23mm,84.95mm) on Top Layer And Pad IC2-4(65.5mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-4(65.5mm,84.95mm) on Top Layer And Pad IC2-5(66.77mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-5(66.77mm,84.95mm) on Top Layer And Pad IC2-6(68.04mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.067mm < 0.254mm) Between Pad IC2-6(68.04mm,84.95mm) on Top Layer And Pad IC2-7(69.31mm,84.95mm) on Top Layer [Top Solder] Mask Sliver [0.067mm]
-Rule Violations :6
+Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
 Rule Violations :0
@@ -68,6 +43,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 25
+Violations Detected : 0
 Waived Violations : 0
 Time Elapsed        : 00:00:01
