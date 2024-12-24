@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=GND Pin=J3-1
+Removed Pin From Net: NetName=+12V_SW Pin=J3-2
+Removed Member From Class: ClassName=3V3 Low Dropout Regulator Member=J3
+Added Component: Designator=J?(2 pin terminal 5mm)
+Add Pin To Net: Unknown Pin: Pin J4-1
+Add Pin To Net: Unknown Pin: Pin J4-2
+Add Pin To Net: Unknown Pin: Pin J5-1
+Add Pin To Net: Unknown Pin: Pin J5-2
+Add Pin To Net: Unknown Pin: Pin J6-1
+Add Pin To Net: Unknown Pin: Pin J6-2
+Add Pin To Net: Unknown Pin: Pin J7-1
+Add Pin To Net: Unknown Pin: Pin J7-2
+Added Pin To Net: NetName=+12V_SW Pin=J?-1
+Added Pin To Net: NetName=GND Pin=J?-2
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class: Class already exists: INA219
+Add Class Member: Failed to add class member : Component J4 SX1100-B
+Add Class Member: Failed to add class member : Component J5 SX1100-B
+Add Class Member: Failed to add class member : Component J6 SX1100-B
+Add Class Member: Failed to add class member : Component J7 SX1100-B
+Added Member To Class: ClassName=3V3 Low Dropout Regulator Member=Component J? 2 pin
