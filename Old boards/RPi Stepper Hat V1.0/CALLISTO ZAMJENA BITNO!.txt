@@ -1,0 +1,8 @@
+in 3a, in 4a medusobno zamijeniti
+in 3b, in 4b medusobno zamijeniti
+
+31->29 in 3 a
+29->31 in 4 a
+
+11->12 in 3 b
+12->11 in 4 b

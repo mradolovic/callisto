@@ -1,0 +1,9 @@
+Added Component: Designator=*(SDM30)
+Added Pin To Net: NetName=Net*_1 Pin=*-1
+Added Pin To Net: NetName=Net*_2 Pin=*-2
+Added Pin To Net: NetName=Net*_2 Pin=*-4
+Add Net: Net with name "Net*_1" already exists
+Add Net: Net with name "Net*_2" already exists
+Added Member To Class: ClassName=SDM30 Member=Component * Empty 2pin connector
+Added Member To Class: ClassName=SDM30 Member=Component * Empty 2pin connector
+Added Member To Class: ClassName=SDM30 Member=Component * SDM30 DCDC

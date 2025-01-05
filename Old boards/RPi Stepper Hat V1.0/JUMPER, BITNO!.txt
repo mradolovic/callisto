@@ -1,0 +1,1 @@
+treba dodati bodge wire jumper na mali ground plane desnog L298, ima premalu vezu s GNDom

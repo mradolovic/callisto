@@ -1,0 +1,470 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/27/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7:38:33 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc" class="file"><acronym title="C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc">C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">46</td></tr>
+</table>
+</td>
+</table><a name="IDFT4LX0AQB1ODKQRT1RUL0JUIQEELL4ACEPBUKXCFPCI3L4CEPLYD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWIENPH1O23E5GXGQJUGD5JLEGF21OTFOP5MDMNIZL1VMLPAOAFYN">Clearance Constraint (Gap=0.3mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSGACCPTR30LRE1MSSUEK2MZNYOXSSDSQCIJHJBJ0M1YSZ5QJBBEE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCN2C3JX1NA5YNMPQXUYP33FIZBNNJQBUECAAK0KME5CNY25R1AD">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID34DVAGXM1F1QGVG2C5GSFWDWGDLF1QD2HY50YVMQLTKM1Y53DEVL">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ0VD4IK3VSQ4GWEE45XY2QS0SKT4LSKRFEPJEEGGBODFHWAWQW5J">Width Constraint (Min=0.5mm) (Max=2mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWNC4BKT04QU0LIVUQDSJWJHVOFP1NQOZOH4XP4FRPZCFLUSQNUKF">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB3PFINB41P0XPMXNBJ4SP4Y5WHBJHIBXKFH03NFIECZA5DL0DAAK">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCGYIILZEYNNFCTJGL4WN3DZJYNDXHVXGNI2AZ5BUHBJIVF324I1M">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBA2XJJDTZQ5CIHONJ4ZOKFXMPCKLVRPT0JNP5ZLLUYBD4FZJYYVP">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ2AINCF4GVOFIWKVI0CRZMSWKLFCXALJXCXTSHEM5530ZTVVU55J">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">41</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF50GTYUS4YPANCGHLOFL1GTDRP1U2OPNYYWR2VCMUD2WHABR5AZG">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSQ0RYOKFZ0VLEHV3U1HUXU0P5IKC52YLA0PMZREYDEJ5JS5KFKWG">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPQDPQ5BIH5BROAZ3DDYFM4IYJPHSIAXKMALDGISREDB011KNA0">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">46</td>
+</tr>
+</table><br><a name="IDCN2C3JX1NA5YNMPQXUYP33FIZBNNJQBUECAAK0KME5CNY25R1AD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.134mil|Location2.X=2948.819mil|Location1.Y=921.26mil|Location2.Y=1187.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.134mil|Location2.X=2948.819mil|Location1.Y=921.26mil|Location2.Y=1187.008mil|Absolute=True">Un-Routed Net Constraint: Track (0.25mm,0.25mm)(0.25mm,6.5mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.134mil|Location2.X=3209.027mil|Location1.Y=921.26mil|Location2.Y=940.945mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2929.134mil|Location2.X=3209.027mil|Location1.Y=921.26mil|Location2.Y=940.945mil|Absolute=True">Un-Routed Net Constraint: Track (0.25mm,0.25mm)(6.859mm,0.25mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7543.311mil|Location2.X=7720.752mil|Location1.Y=3224.41mil|Location2.Y=3244.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7543.311mil|Location2.X=7720.752mil|Location1.Y=3224.41mil|Location2.Y=3244.095mil|Absolute=True">Un-Routed Net Constraint: Track (117.45mm,58.75mm)(121.457mm,58.75mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7701.067mil|Location2.X=7732.283mil|Location1.Y=3212.878mil|Location2.Y=3244.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7701.067mil|Location2.X=7732.283mil|Location1.Y=3212.878mil|Location2.Y=3244.095mil|Absolute=True">Un-Routed Net Constraint: Track (121.457mm,58.75mm)(121.75mm,58.457mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7712.598mil|Location2.X=7732.283mil|Location1.Y=3073.552mil|Location2.Y=3232.563mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7712.598mil|Location2.X=7732.283mil|Location1.Y=3073.552mil|Location2.Y=3232.563mil|Absolute=True">Un-Routed Net Constraint: Track (121.75mm,54.918mm)(121.75mm,58.457mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDQ2AINCF4GVOFIWKVI0CRZMSWKLFCXALJXCXTSHEM5530ZTVVU55J"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3885.123mil|Location2.X=3896.373mil|Location1.Y=2684.139mil|Location2.Y=2695.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3885.123mil|Location2.X=3896.373mil|Location1.Y=2684.139mil|Location2.Y=2695.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Arc (24.1mm,44.92mm) on Top Overlay And Pad U2-1(25.4mm,44.92mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5820.95mil|Location2.X=5832.2mil|Location1.Y=2684.139mil|Location2.Y=2695.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5820.95mil|Location2.X=5832.2mil|Location1.Y=2684.139mil|Location2.Y=2695.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Arc (73.27mm,44.92mm) on Top Overlay And Pad U3-1(74.57mm,44.92mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3368.214mil|Location2.X=3375.881mil|Location1.Y=2119.198mil|Location2.Y=2126.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3368.214mil|Location2.X=3375.881mil|Location1.Y=2119.198mil|Location2.Y=2126.865mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C1-1(10.75mm,31.5mm) on Multi-Layer And Track (11.25mm,30.25mm)(11.25mm,30.525mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.17mil|Location2.X=3393.42mil|Location1.Y=2115.438mil|Location2.Y=2126.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.17mil|Location2.X=3393.42mil|Location1.Y=2115.438mil|Location2.Y=2126.688mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-1(10.75mm,31.5mm) on Multi-Layer And Track (11.25mm,30.25mm)(15.25mm,30.25mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3368.214mil|Location2.X=3375.881mil|Location1.Y=2195.97mil|Location2.Y=2203.636mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3368.214mil|Location2.X=3375.881mil|Location1.Y=2195.97mil|Location2.Y=2203.636mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C1-1(10.75mm,31.5mm) on Multi-Layer And Track (11.25mm,32.475mm)(11.25mm,32.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.17mil|Location2.X=3393.42mil|Location1.Y=2196.147mil|Location2.Y=2207.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.17mil|Location2.X=3393.42mil|Location1.Y=2196.147mil|Location2.Y=2207.397mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-1(10.75mm,31.5mm) on Multi-Layer And Track (11.25mm,32.75mm)(15.25mm,32.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3526.449mil|Location2.X=3539.469mil|Location1.Y=2122.636mil|Location2.Y=2133.886mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3526.449mil|Location2.X=3539.469mil|Location1.Y=2122.636mil|Location2.Y=2133.886mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.095mm &lt; 0.254mm) Between Pad C1-2(15.75mm,31.5mm) on Multi-Layer And Track (15.25mm,30.25mm)(15.25mm,30.525mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.095mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3526.449mil|Location2.X=3539.425mil|Location1.Y=2188.948mil|Location2.Y=2200.198mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3526.449mil|Location2.X=3539.425mil|Location1.Y=2188.948mil|Location2.Y=2200.198mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.095mm &lt; 0.254mm) Between Pad C1-2(15.75mm,31.5mm) on Multi-Layer And Track (15.25mm,32.475mm)(15.25mm,32.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.095mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3611.501mil|Location2.X=3622.751mil|Location1.Y=2002.249mil|Location2.Y=2013.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3611.501mil|Location2.X=3622.751mil|Location1.Y=2002.249mil|Location2.Y=2013.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-1(18.5mm,28.5mm) on Multi-Layer And Track (17.25mm,27.25mm)(17.25mm,29.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.422mil|Location2.X=3627.672mil|Location1.Y=1997.328mil|Location2.Y=2008.578mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.422mil|Location2.X=3627.672mil|Location1.Y=1997.328mil|Location2.Y=2008.578mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-1(18.5mm,28.5mm) on Multi-Layer And Track (17.25mm,27.25mm)(22.25mm,27.25mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.422mil|Location2.X=3627.672mil|Location1.Y=2078.036mil|Location2.Y=2089.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3616.422mil|Location2.X=3627.672mil|Location1.Y=2078.036mil|Location2.Y=2089.286mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-1(18.5mm,28.5mm) on Multi-Layer And Track (17.25mm,29.75mm)(22.25mm,29.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=1997.32mil|Location2.Y=2008.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=1997.32mil|Location2.Y=2008.57mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-2(21mm,28.5mm) on Multi-Layer And Track (17.25mm,27.25mm)(22.25mm,27.25mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=2078.044mil|Location2.Y=2089.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=2078.044mil|Location2.Y=2089.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-2(21mm,28.5mm) on Multi-Layer And Track (17.25mm,29.75mm)(22.25mm,29.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.643mil|Location2.X=3801.893mil|Location1.Y=2037.682mil|Location2.Y=2048.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.643mil|Location2.X=3801.893mil|Location1.Y=2037.682mil|Location2.Y=2048.932mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-2(21mm,28.5mm) on Multi-Layer And Track (22.25mm,27.25mm)(22.25mm,29.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5213.863mil|Location2.X=5225.113mil|Location1.Y=3110.517mil|Location2.Y=3121.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5213.863mil|Location2.X=5225.113mil|Location1.Y=3110.517mil|Location2.Y=3121.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C3-1(59.25mm,56.25mm) on Multi-Layer And Track (58mm,52.5mm)(58mm,57.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5298.509mil|Location2.X=5309.759mil|Location1.Y=3110.517mil|Location2.Y=3121.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5298.509mil|Location2.X=5309.759mil|Location1.Y=3110.517mil|Location2.Y=3121.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C3-1(59.25mm,56.25mm) on Multi-Layer And Track (60.5mm,52.5mm)(60.5mm,57.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5215.824mil|Location2.X=5227.074mil|Location1.Y=3031.777mil|Location2.Y=3043.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5215.824mil|Location2.X=5227.074mil|Location1.Y=3031.777mil|Location2.Y=3043.027mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C3-2(59.25mm,53.75mm) on Multi-Layer And Track (58mm,52.5mm)(58mm,57.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5256.186mil|Location2.X=5267.436mil|Location1.Y=2991.414mil|Location2.Y=3002.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5256.186mil|Location2.X=5267.436mil|Location1.Y=2991.414mil|Location2.Y=3002.664mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C3-2(59.25mm,53.75mm) on Multi-Layer And Track (58mm,52.5mm)(60.5mm,52.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5296.548mil|Location2.X=5307.798mil|Location1.Y=3031.777mil|Location2.Y=3043.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5296.548mil|Location2.X=5307.798mil|Location1.Y=3031.777mil|Location2.Y=3043.027mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C3-2(59.25mm,53.75mm) on Multi-Layer And Track (60.5mm,52.5mm)(60.5mm,57.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3709.926mil|Location2.X=3721.176mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3709.926mil|Location2.X=3721.176mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-1(21mm,37.25mm) on Multi-Layer And Track (19.75mm,33.5mm)(19.75mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3714.847mil|Location2.X=3726.097mil|Location1.Y=2422.524mil|Location2.Y=2433.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3714.847mil|Location2.X=3726.097mil|Location1.Y=2422.524mil|Location2.Y=2433.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-1(21mm,37.25mm) on Multi-Layer And Track (19.75mm,38.5mm)(22.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.635mil|Location2.X=3801.885mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.635mil|Location2.X=3801.885mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-1(21mm,37.25mm) on Multi-Layer And Track (22.25mm,33.5mm)(22.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3709.918mil|Location2.X=3721.168mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3709.918mil|Location2.X=3721.168mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-2(21mm,34.75mm) on Multi-Layer And Track (19.75mm,33.5mm)(19.75mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=2243.383mil|Location2.Y=2254.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3750.28mil|Location2.X=3761.53mil|Location1.Y=2243.383mil|Location2.Y=2254.633mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-2(21mm,34.75mm) on Multi-Layer And Track (19.75mm,33.5mm)(22.25mm,33.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.643mil|Location2.X=3801.893mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3790.643mil|Location2.X=3801.893mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-2(21mm,34.75mm) on Multi-Layer And Track (22.25mm,33.5mm)(22.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.407mil|Location2.X=3878.657mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.407mil|Location2.X=3878.657mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-1(25mm,37.25mm) on Multi-Layer And Track (23.75mm,33.5mm)(23.75mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3872.328mil|Location2.X=3883.578mil|Location1.Y=2422.524mil|Location2.Y=2433.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3872.328mil|Location2.X=3883.578mil|Location1.Y=2422.524mil|Location2.Y=2433.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-1(25mm,37.25mm) on Multi-Layer And Track (23.75mm,38.5mm)(26.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3948.115mil|Location2.X=3959.365mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3948.115mil|Location2.X=3959.365mil|Location1.Y=2346.737mil|Location2.Y=2357.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-1(25mm,37.25mm) on Multi-Layer And Track (26.25mm,33.5mm)(26.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.398mil|Location2.X=3878.648mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.398mil|Location2.X=3878.648mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-2(25mm,34.75mm) on Multi-Layer And Track (23.75mm,33.5mm)(23.75mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3907.761mil|Location2.X=3919.011mil|Location1.Y=2243.383mil|Location2.Y=2254.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3907.761mil|Location2.X=3919.011mil|Location1.Y=2243.383mil|Location2.Y=2254.633mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-2(25mm,34.75mm) on Multi-Layer And Track (23.75mm,33.5mm)(26.25mm,33.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3948.123mil|Location2.X=3959.373mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3948.123mil|Location2.X=3959.373mil|Location1.Y=2283.745mil|Location2.Y=2294.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-2(25mm,34.75mm) on Multi-Layer And Track (26.25mm,33.5mm)(26.25mm,38.5mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5452.052mil|Location2.X=5463.302mil|Location1.Y=2277.84mil|Location2.Y=2289.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5452.052mil|Location2.X=5463.302mil|Location1.Y=2277.84mil|Location2.Y=2289.09mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-1(65.25mm,35.5mm) on Multi-Layer And Track (64mm,34.25mm)(64mm,36.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5456.973mil|Location2.X=5468.223mil|Location1.Y=2272.918mil|Location2.Y=2284.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5456.973mil|Location2.X=5468.223mil|Location1.Y=2272.918mil|Location2.Y=2284.168mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-1(65.25mm,35.5mm) on Multi-Layer And Track (64mm,34.25mm)(69mm,34.25mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5456.973mil|Location2.X=5468.223mil|Location1.Y=2353.627mil|Location2.Y=2364.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5456.973mil|Location2.X=5468.223mil|Location1.Y=2353.627mil|Location2.Y=2364.877mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-1(65.25mm,35.5mm) on Multi-Layer And Track (64mm,36.75mm)(69mm,36.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5590.832mil|Location2.X=5602.082mil|Location1.Y=2272.91mil|Location2.Y=2284.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5590.832mil|Location2.X=5602.082mil|Location1.Y=2272.91mil|Location2.Y=2284.16mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-2(67.75mm,35.5mm) on Multi-Layer And Track (64mm,34.25mm)(69mm,34.25mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5590.832mil|Location2.X=5602.082mil|Location1.Y=2353.635mil|Location2.Y=2364.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5590.832mil|Location2.X=5602.082mil|Location1.Y=2353.635mil|Location2.Y=2364.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-2(67.75mm,35.5mm) on Multi-Layer And Track (64mm,36.75mm)(69mm,36.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5631.194mil|Location2.X=5642.444mil|Location1.Y=2313.273mil|Location2.Y=2324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5631.194mil|Location2.X=5642.444mil|Location1.Y=2313.273mil|Location2.Y=2324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C6-2(67.75mm,35.5mm) on Multi-Layer And Track (69mm,34.25mm)(69mm,36.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4611.908mil|Location2.X=4623.158mil|Location1.Y=2866.422mil|Location2.Y=2877.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4611.908mil|Location2.X=4623.158mil|Location1.Y=2866.422mil|Location2.Y=2877.672mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.149mm &lt; 0.254mm) Between Pad U2-14(41.91mm,50mm) on Multi-Layer And Track (43.06mm,49.55mm)(44.39mm,49.55mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.149mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3935.109mil|Location2.X=3946.359mil|Location1.Y=2866.422mil|Location2.Y=2877.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3935.109mil|Location2.X=3946.359mil|Location1.Y=2866.422mil|Location2.Y=2877.672mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.149mm &lt; 0.254mm) Between Pad U2-2(26.67mm,50mm) on Multi-Layer And Track (24.19mm,49.55mm)(25.52mm,49.55mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.149mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6547.037mil|Location2.X=6558.287mil|Location1.Y=2868.72mil|Location2.Y=2882.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6547.037mil|Location2.X=6558.287mil|Location1.Y=2868.72mil|Location2.Y=2882.357mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.202mm &lt; 0.254mm) Between Pad U3-14(91.08mm,50mm) on Multi-Layer And Track (92.23mm,49.55mm)(93.56mm,49.55mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.202mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5871.634mil|Location2.X=5882.884mil|Location1.Y=2866.362mil|Location2.Y=2879.97mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mrado\Documents\Elektronika\07 - e-Callisto\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0\RPi Stepper Hat V1.0 PcbDoc.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5871.634mil|Location2.X=5882.884mil|Location1.Y=2866.362mil|Location2.Y=2879.97mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.202mm &lt; 0.254mm) Between Pad U3-2(75.84mm,50mm) on Multi-Layer And Track (73.36mm,49.55mm)(74.69mm,49.55mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.202mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

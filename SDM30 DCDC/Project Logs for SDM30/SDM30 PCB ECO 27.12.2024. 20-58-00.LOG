@@ -1,0 +1,13 @@
+Added Pin To Net: NetName=V_IN+ Pin=*-1
+Added Net: Name=V_IN+
+Added Pin To Net: NetName=V_IN- Pin=*-2
+Added Pin To Net: NetName=V_IN- Pin=*-4
+Added Net: Name=V_IN-
+Added Pin To Net: NetName=V_OUT+ Pin=*-2
+Added Pin To Net: NetName=V_OUT+ Pin=*-6
+Added Net: Name=V_OUT+
+Added Pin To Net: NetName=V_OUT- Pin=*-1
+Added Pin To Net: NetName=V_OUT- Pin=*-7
+Added Net: Name=V_OUT-
+Added Member To Class: ClassName=SDM30 Member=Component * SDM30 DCDC
+Added Member To Class: ClassName=SDM30 Member=Component * Empty 2pin connector

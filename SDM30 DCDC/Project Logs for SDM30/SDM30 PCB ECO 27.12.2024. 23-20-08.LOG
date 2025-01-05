@@ -1,0 +1,14 @@
+Added Component: Designator=DC1(SDM30-24S12)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Mean Well"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Order Code"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "SDM30-24S12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "SDM30-24S12"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VIN+ Pin=DC1-1
+Added Pin To Net: NetName=VIN- Pin=DC1-2
+Added Pin To Net: NetName=VIN- Pin=DC1-3
+Added Pin To Net: NetName=VIN- Pin=DC1-4
+Added Pin To Net: NetName=VOUT+ Pin=DC1-6
+Added Pin To Net: NetName=VOUT- Pin=DC1-7
+Added Pin To Net: NetName=TRIM Pin=DC1-8
+Added Member To Class: ClassName=SDM30 Member=Component DC1 SDM30-24S12
