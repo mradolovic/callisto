@@ -1,0 +1,7 @@
+- wrong footprint for J3. Should have been a 5mm pitch screw terminal, now it only allows a normal female or male header.
+- missing terminal for 5V power supply. Currently, we solder the 5V supply to the RPi header
+- directly connect 2 INA 219 to motor driver boards. Currently, if we want to measure motor current, we have to measure it per coil, not per driver. If we want to measure by driver, PCB has to be "hacked"
+- replace J8 from 2 pin to 3 pin. I was worried that the RPi's LDO and my external LDO will interfere, therefore J8 (un)connects them.
+- put some status LED's for motor drivers, 3v3 rail and 5v rail
+- IMPORTANT! - put TVS diodes on every connector, thus eliminating ESD and surges
+- consider mounting BME280 on a seperate daughter board. The sensor itself is hard to solder, was worried that I will overheat the sensor with hot air
