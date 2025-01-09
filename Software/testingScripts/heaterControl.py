@@ -17,11 +17,16 @@ calibrationParameters = bme280.load_calibration_params(bus, bmeAddress)
 g.setmode(g.BOARD)
 g.setup(21, g.OUT)
 
+'''
+example code for heater
+g.output(21, 0)
+	print("heater on")
+	sleep(300)
+	g.output(21, 1)
+	g.cleanup()
+	print("heater off")
+'''
 
-#ZAŠTO JA NEMREM KORISTITI GLOBALNE VARIJABLE OVAKO? koji haos.......
-#airTemperature = bme280.sample(bus, bmeAddress, calibrationParameters).temperature
-#relativeHumidity = bme280.sample(bus, bmeAddress, calibrationParameters).humidity
-#airPressure = bme280.sample(bus, bmeAddress, calibrationParameters).pressure
 
 def getDewPoint(airTemperature, relativeHumidity):
     """Compute the dew point in degrees Celsius
@@ -40,22 +45,15 @@ def getDewPoint(airTemperature, relativeHumidity):
     alpha = ((A * airTemperature) / (B + airTemperature)) + math.log(relativeHumidity/100.0)
     return (B * alpha) / (A - alpha)
 
-'''
-example code for heater
-g.output(21, 0)
-	print("heater on")
-	sleep(300)
-	g.output(21, 1)
-	g.cleanup()
-	print("heater off")
-'''
 
 while True:
     sleep(1)
 
     print("BME 280")
+    #sampling the sensor
     bmeData = bme280.sample(bus, bmeAddress, calibrationParameters)
 
+    #extracting the parameters
     airTemperature = bmeData.temperature
     relativeHumidity = bmeData.humidity
     airPressure = bmeData.pressure
@@ -64,6 +62,7 @@ while True:
     print(airPressure)
     print(relativeHumidity)
 
+    #calculating the dew point using RH and temp
     print("Dew point is")
     print(getDewPoint(airTemperature, relativeHumidity))
     
