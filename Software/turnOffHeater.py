@@ -5,10 +5,8 @@ def main():
 	g.setmode(g.BOARD)
 	g.setup(21, g.OUT)
 
-	g.output(21, 0)
-	print("heater on")
-	sleep(5)
 	g.output(21, 1)
+	sleep(0.5)
 	g.cleanup()
 	print("heater off")
 
