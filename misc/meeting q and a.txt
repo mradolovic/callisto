@@ -1,0 +1,29 @@
+Long term support for current version of spectrometers
+	- how hard is it to source parts?
+	- how long will we continue to use the current version of Callisto?
+
+SDR's as a possible alternative?
+	- RTL2832 and R820T tuner
+	- your experience with SDR's?
+
+Regarding power of incomming radiation
+	- power of background radiation vs peak of burst (in dBm)?
+	- LWA feedpoint
+
+
+issue: integration time, software limitation
+predugo traje
+
+1g bw u commercial
+ssve se railo u pfga
+
+instead of FT, you sweep
+
+-120 dbm
+
+90 deg hybrid 
+
+
+document regards lwa
+
+silicon labs xco si 550
