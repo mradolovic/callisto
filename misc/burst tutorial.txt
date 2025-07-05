@@ -1,0 +1,24 @@
+Date: 20201121
+
+CRAAG, 1300
+
+- blob oko 137 MHz - WX satelit. izgleda digitalno - nule i jedinice
+- artefakt synthesizera na 45 MHz
+- generalno, ignorira se prvih 10 kanala spektra
+
+CRAAG, 1330
+
+- također satelit, ali je u dijelu neba gdje se prima jači signal - in the middle of the beam
+
+HUMAIN, 1430
+
+- type III, slabi
+- proteže se preko nekoliko MHz, definitivno tip III
+
+PERALEJOS, 0730
+
+- širokopojasna smetnja, vertikalno, najvjerojatnije paljenje i gašenje rotatora za praćenje
+
+LANDSCHLACHT, 1046
+
+- trostruki type III. Moguća je nekakva analiza drifta delta-f ili delta-t, CM ne zna napamet

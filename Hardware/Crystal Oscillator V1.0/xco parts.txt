@@ -1,0 +1,8 @@
+Si530 oscillator
+FC200M000G
+
+Gali 6F+ pojacalo
+
+LFCG-225+ low pass filter
+
+TLV77325PDBVR
