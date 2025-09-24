@@ -86,16 +86,16 @@ SpiceDouble getHa(){
 
 int main(int argc, char **argv){
     SpiceDouble ha;
-    SpiceInt sp;
+    SpiceInt setpoint;
     furnsh_c("/home/matej/cspice/kernels/naif0012.tls");    // leapseconds
     furnsh_c("/home/matej/cspice/kernels/de435.bsp");      // planetary ephemeris
     furnsh_c("/home/matej/cspice/kernels/pck00011.tpc");    // Earth orientation & shape
     furnsh_c("/home/matej/cspice/kernels/earth_000101_251219_250923.bpc"); // earth binary pck
 
     ha = getHa();
-    sp = ha/twopi_c() * TICKS_PER_REV + TICKS_PER_REV/4;
+    setpoint = ha/twopi_c() * TICKS_PER_REV + TICKS_PER_REV/4;
 
-    printf("HA: %f;    Setpoint: %d\n", ha, sp);
+    printf("HA: %f;    Setpoint: %d\n", ha, setpoint);
 
     kclear_c();
 
