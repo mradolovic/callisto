@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=+3V3 Pin=DRIVER1-15
+Added Pin To Net: NetName=+3V3 Pin=DRIVER1-16
+Added Pin To Net: NetName=NetDRIVER1_3 Pin=DRIVER1-3
+Added Pin To Net: NetName=NetDRIVER1_3 Pin=IC1-3
+Added Net: Name=NetDRIVER1_3
+Added Pin To Net: NetName=NetDRIVER1_4 Pin=DRIVER1-4
+Added Pin To Net: NetName=NetDRIVER1_4 Pin=IC1-5
+Added Net: Name=NetDRIVER1_4

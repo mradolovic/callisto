@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetDRIVER1_15 Pin=Q1-2
+Removed Pin From Net: NetName=NetDRIVER1_16 Pin=Q2-2
+Removed Pin From Net: NetName=NetDRIVER1_15 Pin=R3-1
+Removed Pin From Net: NetName=NetDRIVER1_16 Pin=R4-1
+Added Pin To Net: NetName=NetDRIVER1_16 Pin=Q1-2
+Added Pin To Net: NetName=NetDRIVER1_15 Pin=Q2-2
+Added Pin To Net: NetName=NetDRIVER1_16 Pin=R3-1
+Added Pin To Net: NetName=NetDRIVER1_15 Pin=R4-1

@@ -1,0 +1,11 @@
+Added Component: Designator=IC1(IC_AD8542ARMZ_Analog_Devices)
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-1
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-2
+Added Pin To Net: NetName=NetIC1_3 Pin=IC1-3
+Added Pin To Net: NetName=GND Pin=IC1-4
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-5
+Added Pin To Net: NetName=NetIC1_6 Pin=IC1-6
+Added Pin To Net: NetName=NetIC1_6 Pin=IC1-7
+Added Pin To Net: NetName=+5V Pin=IC1-8
+Added Member To Class: ClassName=Level Shifter V1.0 Member=Component IC1 AD8542
+Added Member To Class: ClassName=Level Shifter V1.0 Member=Component Q1 PMR280UN
